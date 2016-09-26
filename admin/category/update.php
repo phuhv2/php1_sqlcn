@@ -6,15 +6,15 @@
     </head>
     <body>
 <?php
-	$id = $_GET['id'];
-	if(isset($_POST['post'])){
-                $name = $_POST['cate_name'];
-                $desc = $_POST['description'];
-                mysql_query("update category set cate_name='$name', description='$desc' where id = '$id'") or die('loi truy van 1');
-                header('location: index.php');
-            }
-	$qr = mysql_query("select * from category where id = '$id'") or die('Loi truy van 1');
-	$rs = mysql_fetch_array($qr);
+    $id = $_GET['id'];
+    if(isset($_POST['post'])){
+            $name = $_POST['cate_name'];
+            $desc = $_POST['description'];
+            mysql_query("update category set cate_name='$name', description='$desc' where id = '$id'") or die('loi truy van 1');
+            header('location: index.php');
+        }
+    $qr = mysql_query("select * from category where id = '$id'") or die('Loi truy van 1');
+    $rs = mysql_fetch_array($qr);
 ?>
 <form method="post" action="" enctype="multipart/form-data">
     <table>

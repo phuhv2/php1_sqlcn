@@ -19,7 +19,7 @@
                 $member = @mysql_fetch_array( $sql_query ); 
                 echo "Bạn đang đăng nhập với tài khoản {$member['username']}."; 
                 echo "<br><a href='update-profile.php'>Sửa thông tin</a>";
-                if ($member['admin']=="1")  echo "<br><a href='admin-cp.php'>Trang quản trị</a>";
+                if ($member['admin']=="1")  echo "<br><a href='admin-cp.php'>Trang quản trị</a><br><a href='member'>Member</a>";
                 echo "<br><a href='logout.php'>Thoát ra</a>";
             } 
         ?>
