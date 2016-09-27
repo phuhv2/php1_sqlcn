@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 08 Septembre 2016 à 17:47
+-- Généré le :  Lun 26 Septembre 2016 à 14:00
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -29,16 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `category` (
 `id` int(11) NOT NULL,
   `cate_name` varchar(255) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `description` text NOT NULL,
+  `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `category`
 --
 
-INSERT INTO `category` (`id`, `cate_name`, `description`) VALUES
-(1, 'Oppo', 'Danh mục Oppo'),
-(2, 'Sony', 'Danh mục Sony');
+INSERT INTO `category` (`id`, `cate_name`, `description`, `user_id`) VALUES
+(6, 'Oppo', 'Thương hiệu tàu', 11),
+(7, 'Sony', 'Thương hiệu jav', 10);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 --
 
 INSERT INTO `members` (`id`, `username`, `password`, `name`, `email`, `address`, `mobile`, `admin`) VALUES
-(10, 'havanphu', '96e79218965eb72c92a549dd5a330112', 'Phú', 'hvp2512@gmail.com', 'Hải Phòng', '01694633855', 0),
+(10, 'havanphu', '96e79218965eb72c92a549dd5a330112', 'Phú', 'hvp2512@gmail.com', 'Hải Phòng', '01694633855', 1),
 (11, 'admin', '57ff1762dede9760b544089402dcaef0', 'Phú', 'phuhv2@gmail.com', 'Hải Phòng', '01694633855', 1);
 
 -- --------------------------------------------------------
@@ -85,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `images`, `cate_id`) VALUES
-(53, 'fdg3333333333', 'ergerg3333333333', '99999', '1473272814-0majirel01.jpg', 1),
+(53, 'fdg3333333333', 'ergerg3333333333', '99999', '1474448007-tips-quan-ao-cho-nguoi-cao-9.jpg', 1),
 (58, '33444444444', 'ergerg3333333333r', '333333333', '1473272854-404520_354280124686610_241466018_n.jpg', 1);
 
 --
@@ -118,7 +119,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT pour la table `category`
 --
 ALTER TABLE `category`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `members`
 --
