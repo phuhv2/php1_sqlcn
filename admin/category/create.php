@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Category</title>
+        <script src="../plugins/tinymce/js/tinymce/tinymce.min.js"></script>
     </head>
     <body>
         <?php include '../access.php'; ?>
@@ -13,7 +14,24 @@
         </tr>
         <tr>
             <td>Description: </td>
-            <td><input type="text" name="description"></td>
+            <td>
+                <script type="text/javascript">
+                  tinymce.init({ 
+                    selector: '#noi_dung', 
+                    theme: 'modern',
+                    width: 800, 
+                    height: 300,
+                    plugins: [ 
+                      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                      'save table contextmenu directionality emoticons template paste textcolor jbimages'
+                    ],
+                    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons jbimages',
+                    relative_urls: false
+                  });
+                </script>
+                  <textarea id="noi_dung" name="description" ></textarea>
+            </td>
         </tr>
         <tr>
             <td><input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"></td>
